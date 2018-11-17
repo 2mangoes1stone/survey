@@ -2,4 +2,68 @@
 
 .survey-details-container {
   @include page-layout;
+  margin-top: 60px;
+
+  .details-card {
+    @include card;
+  }
+
+  .last {
+    margin-bottom: 50px;
+  }
+
+  .completion-rate {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .rating-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .rating-row-heading {
+    margin-bottom: 20px;
+
+    p {
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+
+  .rating-row-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:hover {
+      background-color: #F3F4F5;
+      margin-left: -20px;
+      margin-right: -20px;
+      padding: 10px 20px;
+    }
+  }
+
+  .question {
+    width: 70%;
+  }
+
+  .average-rating {
+    width: 30%;
+    text-align: center;
+    vertical-align: middle;
+
+    span {
+      display:block;
+      width:100px;
+      height: 100%;
+      margin: 0 auto;
+    }
+  }
 }

@@ -6,8 +6,6 @@
   .survey-card {
     @include card;
     text-decoration: none;
-    margin-top: 50px;
-    padding: 10px;
     display: flex;
     flex-direction: row;
 
@@ -16,12 +14,16 @@
     }
 
     &:visited {
-      color: #292F33;
+      color: #00AC3E;
     }
   }
 
   .survey-card-content {
     width: 95%;
+  }
+
+  p {
+    margin-top: 10px;
   }
 
   .chevron-svg {

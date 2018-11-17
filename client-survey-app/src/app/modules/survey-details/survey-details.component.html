@@ -1,4 +1,22 @@
 <div class="survey-details-container">
   <h1>{{ surveyDetails?.name }}</h1>
+  <p class="completion-rate">Completion rate: {{ surveyDetails?.response_rate | percent }}</p>
+
+  <div class="details-card" *ngFor="let theme of themes; let last = last" [ngClass]="{ 'last': last }">
+    <h3>{{ theme.name }}</h3>
+
+    <div class="rating-row rating-row-heading">
+      <p class="question">Question</p>
+      <p class="average-rating">Average Rating</p>
+    </div>
+
+    <div class="rating-row rating-row-content" *ngFor="let question of theme.questions">
+      <p class="question">{{ question.description }}</p>
+      <p class="average-rating">
+        <span>{{ question.average_rating | number : '1.2-2' }}</span>
+      </p>
+    </div>
+
+  </div>
 
 </div>

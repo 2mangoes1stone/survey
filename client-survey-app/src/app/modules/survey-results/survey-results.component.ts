@@ -28,7 +28,7 @@ export class SurveyResultsComponent implements OnInit {
       .subscribe(response => {
         this.surveyResults = response.survey_results
         response.survey_results.map(survey => {
-          survey.routerLink = this.getRoute(survey);
+          survey.router_link = this.getRoute(survey);
         })
       });
   }
