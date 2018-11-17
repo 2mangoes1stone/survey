@@ -1,13 +1,13 @@
 <div class="survey-results-container">
   <h1>Survey Results</h1>
 
-  <div class="survey-card" *ngFor="let result of surveyResults">
+  <a href="javascript:;" class="survey-card" *ngFor="let result of surveyResults" (click)="viewDetails(result.routerLink, result.url)">
 
     <div class="survey-card-content">
         <h3>{{ result?.name }}</h3>
         <p>View Results</p>
+        <p>{{ detailsRoute }}</p>
     </div>
-
 
     <div class="chevron-svg">
       <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -16,5 +16,5 @@
       </svg>
     </div>
 
-  </div>
+  </a>
 </div>

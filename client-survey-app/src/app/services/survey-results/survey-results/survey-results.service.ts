@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { SurveyResultResponse, SurveyResultDetail, SurveyResultDetailResponse } from './survey-result.model';
+import { SurveyResultResponse, SurveyResultDetailResponse } from './survey-result.model';
 import { environment } from 'src/environments/environment';
 
 
