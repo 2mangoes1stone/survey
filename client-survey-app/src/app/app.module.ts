@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SurveyResultsService } from './services/survey-results/survey-results/survey-results.service';
+import { SurveyResultsModule } from './modules/survey-results/survey-results.module';
+import { SurveyDetailsModule } from './modules/survey-details/survey-details.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { SurveyResultsService } from './services/survey-results/survey-results/s
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SurveyResultsModule,
+    SurveyDetailsModule
   ],
   providers: [
     SurveyResultsService

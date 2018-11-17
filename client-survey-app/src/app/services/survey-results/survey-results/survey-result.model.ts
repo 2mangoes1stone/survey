@@ -7,7 +7,7 @@ export interface SurveyResultResponse {
 export interface SurveyResult {
   name:                      string;
   url:                       string;
-  participant_count:         number;
+  participant_count:         string;
   response_rate:             number;
   submitted_response_count:  number;
 }
@@ -20,7 +20,7 @@ export interface SurveyResultDetail {
   name:                     string;
   url:                      string;
   participant_count:        number;
-  response_rate:             number;
+  response_rate:            number;
   submitted_response_count: number;
   themes:                   Theme[];
 }

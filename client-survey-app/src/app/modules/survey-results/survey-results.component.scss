@@ -1,0 +1,43 @@
+@import '../../../styles';
+
+
+.survey-results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 77px;
+  width: 480px;
+
+  h1 {
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .survey-card {
+    @include card;
+    margin-top: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .survey-card-content {
+    width: 95%;
+  }
+
+  .chevron-svg {
+    justify-content: right;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

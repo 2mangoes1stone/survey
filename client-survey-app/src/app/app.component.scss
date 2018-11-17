@@ -1,0 +1,16 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .banner {
+    background-color: #292F33;
+    height: 144px;
+    width: 100%;
+    margin-bottom: -144px;
+  }
+}
+
+.route-content {
+  flex: 1 0 auto;
+}
