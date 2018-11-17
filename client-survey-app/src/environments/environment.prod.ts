@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+
+  baseApiIUrl: 'https://survery-server-zmqhdnfxif.now.sh/' + '/api'
 };
