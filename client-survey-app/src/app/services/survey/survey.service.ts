@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { SurveyResultResponse, SurveyResultDetailResponse } from './survey.model';
@@ -14,10 +14,14 @@ export class SurveyService {
   ) { }
 
   public getSurveyResults(): Observable<SurveyResultResponse> {
-    return this.http.get<SurveyResultResponse>(`${environment.baseApiUrl}/survey_results`);
+    return this.http.get<SurveyResultResponse>(`${environment.baseApiUrl}/survey_results`, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    });
   }
 
   public getSurveyResultDetails(path: string): Observable<SurveyResultDetailResponse> {
-    return this.http.get<SurveyResultDetailResponse>(`${environment.baseApiUrl}${path}`);
+    return this.http.get<SurveyResultDetailResponse>(`${environment.baseApiUrl}${path}`, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    });
   }
 }
