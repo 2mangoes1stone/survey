@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { SurveyResultsService } from 'src/app/services/survey-results/survey-results/survey-results.service';
-import { SurveyResult } from 'src/app/services/survey-results/survey-results/survey-result.model';
+import { SurveyService } from 'src/app/services/survey/survey.service';
+import { SurveyResult } from 'src/app/services/survey/survey.model';
 
 @Component({
   selector: 'app-survey-results',
@@ -16,25 +16,25 @@ export class SurveyResultsComponent implements OnInit {
   private routeMapping = {
     'Simple Survey': 'simple-survey',
     'Acme Engagement Survey': 'acme-survey'
-  }
+  };
 
   constructor(
-    private surveyResultsService: SurveyResultsService,
+    private surveyService: SurveyService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.surveyResultsService.getSurveyResults()
+    this.surveyService.getSurveyResults()
       .subscribe(response => {
-        this.surveyResults = response.survey_results
+        this.surveyResults = response.survey_results;
         response.survey_results.map(survey => {
           survey.router_link = this.getRoute(survey);
-        })
+        });
       });
   }
 
   public viewDetails(apiPath: string, queryParams: string): void {
-    this.router.navigate([`/survey-results/${apiPath}`], {
+    this.router.navigate([`/survey-details/${apiPath}`], {
       queryParams: {
         apiPath: queryParams
       }

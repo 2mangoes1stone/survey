@@ -9,8 +9,8 @@ const routes: Routes = [
     component: SurveyResultsComponent,
   },
   {
-    path: 'survey-results/:survey-name',
-    component: SurveyDetailsComponent
+    path: 'survey-details/:survey-name',
+    loadChildren: '../app/modules/survey-details/survey-details.module#SurveyDetailsModule'
   },
   { path: '**', redirectTo: '/survey-results', pathMatch: 'full' }
 ];

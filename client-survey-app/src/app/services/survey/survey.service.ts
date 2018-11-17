@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { SurveyResultResponse, SurveyResultDetailResponse } from './survey-result.model';
+import { SurveyResultResponse, SurveyResultDetailResponse } from './survey.model';
 import { environment } from 'src/environments/environment';
 
 
 @Injectable()
-export class SurveyResultsService {
+export class SurveyService {
 
   constructor(
     private http: HttpClient

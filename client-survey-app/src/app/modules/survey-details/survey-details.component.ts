@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SurveyResultsService } from 'src/app/services/survey-results/survey-results/survey-results.service';
+import { SurveyService } from 'src/app/services/survey/survey.service';
 import { ActivatedRoute } from '@angular/router';
-import { SurveyResultDetail, Theme } from 'src/app/services/survey-results/survey-results/survey-result.model';
+import { SurveyResultDetail, Theme } from 'src/app/services/survey/survey.model';
 
 @Component({
   selector: 'app-survey-details',
@@ -14,17 +14,17 @@ export class SurveyDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private surveyResultsService: SurveyResultsService
+    private surveyService: SurveyService
   ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.getSurveyDetails(params.apiPath);
-    })
+    });
   }
 
   private getSurveyDetails(params: string): void {
-    this.surveyResultsService.getSurveyResultDetails(params).subscribe(details => {
+    this.surveyService.getSurveyResultDetails(params).subscribe(details => {
       this.surveyDetails = details.survey_result_detail;
       this.themes = this.surveyDetails.themes;
       this.calculateAveRating();
@@ -39,11 +39,11 @@ export class SurveyDetailsComponent implements OnInit {
         question.survey_responses.map(response => {
           if (response.response_content) {
             divisor += 1;
-            totalScore += parseInt(response.response_content);
+            totalScore += parseInt(response.response_content, 10);
           }
-        })
+        });
         question.average_rating = totalScore / divisor;
-      })
-    })
+      });
+    });
   }
 }

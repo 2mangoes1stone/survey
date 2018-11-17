@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SurveyResultsService } from './services/survey-results/survey-results/survey-results.service';
+import { SurveyService } from './services/survey/survey.service';
 import { SurveyResultsModule } from './modules/survey-results/survey-results.module';
 import { SurveyDetailsModule } from './modules/survey-details/survey-details.module';
 
@@ -20,7 +20,7 @@ import { SurveyDetailsModule } from './modules/survey-details/survey-details.mod
     SurveyDetailsModule
   ],
   providers: [
-    SurveyResultsService
+    SurveyService
   ],
   bootstrap: [AppComponent]
 })
