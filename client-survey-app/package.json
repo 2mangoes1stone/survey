@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run lint && ng serve --aot -o",
-    "build": "ng build",
+    "build": "ng lint && ng build",
     "test": "ng test",
     "lint": "ng lint --fix",
     "e2e": "ng e2e"
