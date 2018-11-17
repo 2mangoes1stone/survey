@@ -1,11 +1,17 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 const surveyResultsRouter = require('./routes/survey-results');
 
 const server = express();
 
 server.use(bodyParser.json());
+
+server.use(cors({
+  origin: process.env.CORS_ORIGINS,
+}));
 
 server.use('/api', [
   surveyResultsRouter
