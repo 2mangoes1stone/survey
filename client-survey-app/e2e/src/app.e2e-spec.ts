@@ -1,14 +1,18 @@
 import { AppPage } from './app.po';
+import { e2eUtils } from './e2e-utils';
 
-describe('workspace-project App', () => {
+describe('CultureAmp survey app', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('navigate to the default route', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to client-survey-app!');
+    e2eUtils.waitForElementDisplayed('.survey-results-container');
+    page.getUrl().then((path) => {
+      expect(path).toContain('/survey-results');
+    });
   });
 });
