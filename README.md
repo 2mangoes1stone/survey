@@ -37,3 +37,9 @@ There were many approaches I could have taken to load the details route, but thi
 4. npm start to run dev environment
 5. npm run test:unit or npm run test:watch for unit tests
 6. npm run test:e2e for e2e tests
+
+## github repo
+
+```
+https://github.com/ifollowedthewhiterabbit/survey
+```
