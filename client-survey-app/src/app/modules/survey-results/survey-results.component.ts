@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 
 import { SurveyService } from 'src/app/services/survey/survey.service';
 import { SurveyResult } from 'src/app/services/survey/survey.model';
+import { easeInOutAnimation } from 'src/app/animations/ease-in-out.animation';
 
 @Component({
   selector: 'app-survey-results',
   templateUrl: './survey-results.component.html',
-  styleUrls: ['./survey-results.component.scss']
+  styleUrls: ['./survey-results.component.scss'],
+  animations: [ easeInOutAnimation ]
 })
 export class SurveyResultsComponent implements OnInit {
   public surveyResults: SurveyResult[];

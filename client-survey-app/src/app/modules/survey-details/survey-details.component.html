@@ -1,4 +1,5 @@
-<div class="survey-details-container">
+<div *ngIf="!surveyDetails" class="survey-details-container"><h1>loading...</h1></div>
+<div *ngIf="surveyDetails" class="survey-details-container" [@easeInOut]>
   <h1>{{ surveyDetails?.name }}</h1>
   <p class="completion-rate">Completion rate: {{ surveyDetails?.response_rate | percent }}</p>
 

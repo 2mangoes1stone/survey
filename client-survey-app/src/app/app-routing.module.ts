@@ -12,7 +12,8 @@ const routes: Routes = [
     path: 'survey-details/:survey-name',
     loadChildren: '../app/modules/survey-details/survey-details.module#SurveyDetailsModule'
   },
-  { path: '**', redirectTo: '/survey-results', pathMatch: 'full' }
+  { path: '**', redirectTo: '/survey-results', pathMatch: 'full' },
+  { path: '', redirectTo: '/survey-results', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
-<div class="survey-results-container">
+<div *ngIf="!surveyResults" class="survey-results-container"><h1>...Loading</h1></div>
+<div *ngIf="surveyResults" class="survey-results-container" [@easeInOut]>
   <h1>Survey Results</h1>
 
   <a href="javascript:;" class="survey-card" *ngFor="let result of surveyResults" (click)="viewDetails(result.router_link, result.url)">

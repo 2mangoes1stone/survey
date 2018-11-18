@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SurveyDetailsComponent } from './survey-details.component';
 
-
 const routes: Routes = [
   { path: '', component: SurveyDetailsComponent },
 ];

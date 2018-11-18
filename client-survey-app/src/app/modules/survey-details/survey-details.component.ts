@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { SurveyService } from 'src/app/services/survey/survey.service';
 import { ActivatedRoute } from '@angular/router';
 import { SurveyResultDetail, Theme } from 'src/app/services/survey/survey.model';
+import { easeInOutAnimation } from 'src/app/animations/ease-in-out.animation';
 
 @Component({
   selector: 'app-survey-details',
   templateUrl: './survey-details.component.html',
-  styleUrls: ['./survey-details.component.scss']
+  styleUrls: ['./survey-details.component.scss'],
+  animations: [ easeInOutAnimation ]
 })
 export class SurveyDetailsComponent implements OnInit {
   public surveyDetails: SurveyResultDetail;
