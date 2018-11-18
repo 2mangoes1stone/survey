@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run lint && ng serve --aot -o",
-    "build": "ng lint && ng build --prod",
-    "test": "ng test",
     "lint": "ng lint --fix",
-    "e2e": "ng e2e"
+    "start": "npm run lint && ng serve --aot -o",
+    "test": "ng test",
+    "test:watch": "npm run lint && ng test --source-map=false --browsers=Chrome",
+    "e2e": "ng e2e",
+    "build": "npm run lint && npm run test && ng build --prod"
   },
   "private": true,
   "dependencies": {

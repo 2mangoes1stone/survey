@@ -10,7 +10,7 @@ export interface SurveyResult {
   participant_count:         string;
   response_rate:             number;
   submitted_response_count:  number;
-  router_link?:               string;
+  router_link?:              string;
 }
 
 export interface SurveyResultDetailResponse {
